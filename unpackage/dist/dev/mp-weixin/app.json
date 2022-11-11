@@ -5,7 +5,10 @@
     "pages/bread/bread",
     "pages/food/food",
     "pages/my/my",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/home/home",
+    "pages/home/home-banner",
+    "pages/collect-data/collect-data"
   ],
   "subPackages": [],
   "window": {

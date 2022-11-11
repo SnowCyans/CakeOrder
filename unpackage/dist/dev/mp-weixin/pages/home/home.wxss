@@ -60,7 +60,39 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.title {
-  color: black;
+.banner {
+  height: 1000rpx;
+}
+.banner swiper-item {
+  height: 1000rpx;
+}
+.banner swiper-item image {
+  width: 100%;
+  height: 1000rpx;
+}
+.item-scroll {
+  white-space: nowrap;
+}
+.item-scroll image {
+  height: 290rpx;
+}
+.classFy {
+  width: 100%;
+  height: 380rpx;
+}
+.back-top {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 120rpx;
+  right: 60rpx;
+  background-color: #fff;
+  box-shadow: 0 0 10rpx 5rpx gray;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+}
+.scrollcont {
+  height: 100vh;
 }
 

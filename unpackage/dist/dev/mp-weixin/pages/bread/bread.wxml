@@ -1,1 +1,1 @@
-<view></view>
+<view><view class="flex justify-between padding"><view>草莓蛋糕</view><view>购物车按钮</view><text-comp vue-id="cea69964-1" bind:__l="__l"></text-comp></view></view>
