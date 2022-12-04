@@ -11,18 +11,18 @@
 					</view>
 				</swiper-item>
 			</swiper>
-			<homeTitle title="本季推荐" entTitle="QWERTY" entTit="QQQQ"></homeTitle>
+			<homeTitle title="本季推荐" entTitle="Recommend" entTit="White Lover"></homeTitle>
 			<scroll-view scroll-x="true" >
 				<view class="item-scroll">
 					<image v-for="(item,i) in 3" src="../../static/img/recommend1.jpeg" mode="heightFix"></image>
 				</view>
 			</scroll-view>
-			<homeTitle title="法式经典" entTitle="QWERTY" entTit="QQQQ"></homeTitle>
+			<homeTitle title="法式经典" entTitle="French Classic" entTit="French"></homeTitle>
 			<image class="classFy" src="../../static/img/1.jpg" mode=""></image>
 			
 			<!-- goods-Item组件 -->
-			<view class="flex justify-between padding-sm flex-wrap">
-				<goodsItem v-for="(item,i) in 4" :key="i" :list="item"></goodsItem>
+			<view class="flex justify-between flex-wrap">
+				<goodsItem v-for="(item,i) in goodsList" :key="i" :list="item"></goodsItem>
 			</view>
 			
 			<!-- 返回顶部 -->
@@ -30,7 +30,7 @@
 				<text class="iconfont icon-tubiao_fanhuidingbu"></text>
 			</view>
 			
-		
+		<tabBar></tabBar>
 	</scroll-view>
 </template>
 
@@ -40,7 +40,8 @@
 			return {
 				isShow:false,
 				scrollItem:'',
-				banner:[]
+				banner:[],
+				goodsList:[]
 			};
 		},
 		methods:{
@@ -63,11 +64,14 @@
 				})
 			}
 		},
-		onLoad(){
-			this.$get('/1.1/classes/banner').then((res) => {
-				console.log(res);
-				this.banner = res.results
-			})
+		async onLoad(){
+			const res =await this.$get('/1.1/classes/banner')
+			console.log(res);
+			this.banner = res.results
+			
+			const res2 = await this.$get(`/1.1/classes/goods?where={"bcid":1}&limit=8&skip=0`)
+			console.log(res2);
+			this.goodsList = res2.results
 		}
 	}
 </script>

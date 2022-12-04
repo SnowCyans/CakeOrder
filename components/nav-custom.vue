@@ -2,16 +2,22 @@
 	<view>
 		<view class="cu-bar bg-white">
 			<view class="action">
-				<text class="cuIcon-locationfill text-gray"></text> 杭州
+					<u-icon
+					@click="backToHome()"
+					                    name="home"
+					                    size="22"
+									color="gray"
+					                ></u-icon>
+				</text>
+				
 			</view>
 			<view class="content text-bold">
 				CAKEORDER
 			</view>
 				
-				<u-line  direction="col" length="15"></u-line>
 			<view class="action">
 				<text class="cuIcon-search text-grey"></text>
-				<text class="cuIcon-sort text-red"></text>
+				<text class="cuIcon-sort text-bold"></text>
 			</view>
 		</view>
 	</view>
@@ -24,6 +30,14 @@
 			return {
 				
 			};
+		},
+		methods:{
+			// 返回首页
+			backToHome(){
+				uni.navigateTo({
+					url:'/pages/home/home'
+				})
+			}
 		}
 	}
 </script>
